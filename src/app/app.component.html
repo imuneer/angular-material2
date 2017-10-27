@@ -1,20 +1,110 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar color="primary" class="main-toolbar mat-elevation-z3">
+    <span><button fxHide.lg="true" fxHide.md="true" mat-icon-button (click)="sidenav.toggle()">
+     <mat-icon aria-label="Open side bar">menu</mat-icon>
+  </button>
+  ENCODEZ APPLICATION</span>
+    <span fxFlex="grow"></span>
+    <!-- button matTooltip="Logout" mat-icon-button><mat-icon>power_settings_new</mat-icon></button -->
+    <button matTooltip="Configuration" mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon> </button>
+</mat-toolbar>
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item>
+        <mat-icon> person_outline </mat-icon>
+        <span> Profile </span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon> settings </mat-icon>
+        <span> Configuration </span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+        <mat-icon> exit_to_app </mat-icon>
+        <span> Logout </span>
+    </button>
+</mat-menu>
 
+<mat-sidenav-container class="container" fxLayout="row wrap" fullscreen>
+    <mat-sidenav #sidenav mode="side" opened="false" fxFlex="260px" class="mat-elevation-z3">
+        <mat-nav-list>
+            <section class="mat-typography">
+                <h3>MENU</h3>
+            </section>
+            <a mat-list-item>
+                <mat-icon>airplay</mat-icon> Dashboard</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>apps</mat-icon> Tasks</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>subject</mat-icon> Workgroup</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>shopping_cart</mat-icon> Companies</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>work</mat-icon> Call &amp; Chats</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>bubble_chart</mat-icon> Calandar</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>domain</mat-icon> Webmail</a>
+            <mat-divider></mat-divider>
+            <a mat-list-item>
+                <mat-icon>graphic_eq</mat-icon> Time &amp; Report</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="main-content" fxFlex>
+        <mat-toolbar color="primary" class="secondary-toolbar mat-elevation-z1">
+            <button class="fab-theme" matTooltip="Choose theme" [matMenuTriggerFor]="themeMenu" mat-fab><mat-icon>dialpad</mat-icon></button>
+            <mat-icon>grid_on</mat-icon> &nbsp;&nbsp; Invoices
+        </mat-toolbar>
+        <mat-menu #themeMenu="matMenu" yPosition="below" xPosition="before">
+            <button mat-menu-item> BLUE </button>
+            <button mat-menu-item> GREEN </button>
+        </mat-menu>
+              
+        <div class="content-body" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px">
+            <mat-nav-list fxFlex="nogrow" fxHide.xs>
+                <a mat-list-item> Add Invoice </a>
+                <a mat-list-item> All Invoices </a>
+                <a mat-list-item> Pendings </a>
+                <a mat-list-item> View Batches </a>
+            </mat-nav-list>
+            <mat-card fxFlex>
+                <mat-card-title>
+                    Detailed Entries
+                </mat-card-title>
+                <mat-card-subtitle>
+                    create entries for the date
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <p matLine>Simple card</p>
+                    <form class="example-form">
+                        <mat-form-field>
+                            <mat-select placeholder="Favorite food">
+                                <mat-option [value]="1">Pizza</mat-option>
+                                <mat-option [value]="2">Chicken Charcole</mat-option>
+                                <mat-option [value]="3">Dolphine Kothu</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput #message maxlength="256" placeholder="Message">
+                            <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+                            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                        </mat-form-field>
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button color="primary" mat-raised-button>Save</button>
+                    <button mat-button>Clear</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</mat-sidenav-container>
+
+<footer class="mat-typography">
+    <span class="mat-caption">Copyright &copy; <a href="https://blog.encodez.com/demos/angular-material2/">ENCODEZ</a> 2018</span>
+</footer>
