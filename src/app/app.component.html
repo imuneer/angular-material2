@@ -72,35 +72,63 @@
                 <a mat-list-item> Pendings </a>
                 <a mat-list-item> View Batches </a>
             </mat-nav-list>
-            <mat-card fxFlex>
-                <mat-card-title>
-                    Detailed Entries
-                </mat-card-title>
-                <mat-card-subtitle>
-                    create entries for the date
-                </mat-card-subtitle>
-                <mat-card-content>
-                    <p matLine>Simple card</p>
-                    <form class="example-form">
-                        <mat-form-field>
-                            <mat-select placeholder="Favorite food">
-                                <mat-option [value]="1">Pizza</mat-option>
-                                <mat-option [value]="2">Chicken Charcole</mat-option>
-                                <mat-option [value]="3">Dolphine Kothu</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        <mat-form-field class="example-full-width">
-                            <input matInput #message maxlength="256" placeholder="Message">
-                            <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-                            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-                        </mat-form-field>
-                    </form>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button color="primary" mat-raised-button>Save</button>
-                    <button mat-button>Clear</button>
-                </mat-card-actions>
-            </mat-card>
+            <div fxFlex>
+                    <mat-card >
+                            <mat-card-title>
+                                Detailed Entries
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                create entries for the date
+                            </mat-card-subtitle>
+                            <mat-card-content>
+                                <p matLine>Simple card</p>
+                                <form class="example-form">
+                                    <mat-form-field>
+                                        <mat-select placeholder="Favorite food">
+                                            <mat-option [value]="1">Pizza</mat-option>
+                                            <mat-option [value]="2">Chicken Charcole</mat-option>
+                                            <mat-option [value]="3">Dolphine Kothu</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput #message maxlength="256" placeholder="Message">
+                                        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+                                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                                    </mat-form-field>
+                                </form>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button color="primary" mat-raised-button>Save</button>
+                                <button mat-button>Clear</button>
+                            </mat-card-actions>
+                        </mat-card>
+                        <mat-card >
+                            <mat-card-title>
+                                Download &amp; Instructions
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                blog.encodez.com
+                            </mat-card-subtitle>
+                            <mat-card-content>
+                                <p>Please follow the link below to download and further Instructions</p>
+                                <p matLine>
+                                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                        <ins class="adsbygoogle"
+                                             style="display:block; text-align:center;"
+                                             data-ad-layout="in-article"
+                                             data-ad-format="fluid"
+                                             data-ad-client="ca-pub-9412478440570140"
+                                             data-ad-slot="3208758799"></ins>
+                                        <script>
+                                             (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                    <a mat-raised-button color="warn" href="/demos/angular-material2/"><mat-icon>flight_land</mat-icon> Download</a>
+                            </mat-card-actions>
+                        </mat-card>
+            </div>
         </div>
     </div>
 </mat-sidenav-container>
